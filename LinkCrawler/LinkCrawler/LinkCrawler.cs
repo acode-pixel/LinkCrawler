@@ -129,7 +129,7 @@ namespace LinkCrawler
         private void FinaliseSession()
         {
             _timer.Stop();
-            if (_settings.PrintSummary)
+            if (PrintSummary)
             {
                 List<string> messages = new List<string>();
                 messages.Add(""); // add blank line to differentiate summary from main output
