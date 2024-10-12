@@ -20,6 +20,8 @@ namespace LinkCrawler
         public IEnumerable<IOutput> Outputs { get; set; }
         public IValidUrlParser ValidUrlParser { get; set; }
         public bool OnlyReportBrokenLinksToOutput { get; set; }
+        public bool PrintSummary { get; set; }
+
         public static List<LinkModel> UrlList;
         private ISettings _settings;
         private Stopwatch _timer;
@@ -33,6 +35,7 @@ namespace LinkCrawler
             UrlList = new List<LinkModel>();
             RestRequest = new RestRequest(Method.GET).SetHeader("Accept", "*/*");
             OnlyReportBrokenLinksToOutput = settings.OnlyReportBrokenLinksToOutput;
+            PrintSummary = settings.PrintSummary;
             _settings = settings;
             _timer = new Stopwatch();
         }
